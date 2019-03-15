@@ -1,6 +1,7 @@
 .jumbotron {
   background-color: #FC586B;
-  color: #3A3F4F
+  color: #3A3F4F;
+  margin-bottom: .5rem;
 }
 
 .jumbotron h1 {

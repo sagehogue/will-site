@@ -2,11 +2,18 @@ body {
     background-color: #FFF2F2;
 }
 
+.alignRight {
+    text-align: right;
+}
+
+.wrapper {
+    position: relative;
+}
+
 .imageWrapper {
+    position: relative;
     /* transform: translateY(-20%); */
-    display: grid;
-    grid-template-areas: 'a b';
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .imageWrapper img:first-child {
@@ -16,4 +23,58 @@ body {
 
 .imageWrapper img:nth-child(2) {
     grid-area: b;
+}
+
+.caption {
+    /* font-family: "Lato"; */
+    word-wrap: wrap;
+    /* color: #E55073; */
+    color: #F2C14E;
+    z-index: 7000;
+    font-size: 2.7rem;
+    font-weight: 700;
+    width: 100%;
+    top: 0;
+    line-height: 2rem;
+    margin-bottom: .5rem;
+    position: absolute;
+    /* line-height: 0; */
+}
+
+.colorTeal {
+    color: teal;
+}
+
+.colorDarkPink {
+    color: #E55073;
+}
+
+.colorLightPink {
+    color: #FC586B;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.pullUp {
+    transform: translateY(-25%);
+}
+
+.pullLeft {
+    left: -5%;
+}
+.pullUp100 {
+    transform: translateY(-100%);
+    /* text-align: center; */
+
+}
+
+.pullDown {
+    top: 125%;
+    /* transform: translateY(170%); */
+}
+
+.pullDownLess {
+    top: 101%;
 }

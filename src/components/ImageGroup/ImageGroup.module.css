@@ -1,0 +1,47 @@
+.imageGrid {
+    display: grid;
+    width: 100%;
+}
+
+.imageGrid img {
+}
+
+.twoImages {
+    grid-template-areas: 'a b';
+}
+
+.threeImages {
+    grid-template-areas: "a a b b" 
+                         ". c c .";
+}
+
+.fourImages {
+    grid-template-areas: "a a b b" 
+                         "c c d d";
+}
+
+.fiveImages {
+    grid-template-areas: "a a b b" 
+                         "c c d d"
+                         "e e e e"
+}
+
+.fiveImages :first-child {
+    grid-area: a;
+}
+.fiveImages :nth-child(2) {
+    grid-area: b;
+}
+.fiveImages :nth-child(3) {
+    grid-area: c;
+}
+.fiveImages :nth-child(4) {
+    grid-area: d;
+}
+.fiveImages :nth-child(5) {
+    grid-area: e;
+}
+
+.twoImages {
+    grid-template-areas: 'a b'
+}
