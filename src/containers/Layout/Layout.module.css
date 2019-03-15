@@ -1,0 +1,19 @@
+body {
+    background-color: #FFF2F2;
+}
+
+.imageWrapper {
+    /* transform: translateY(-20%); */
+    display: grid;
+    grid-template-areas: 'a b';
+    margin-bottom: 5rem;
+}
+
+.imageWrapper img:first-child {
+    grid-area: a;
+    transform: translateY(25%) !important;
+}
+
+.imageWrapper img:nth-child(2) {
+    grid-area: b;
+}
