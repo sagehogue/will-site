@@ -1,17 +1,9 @@
 import React, { useState, useContext } from 'react';
-import Image from 'react-bootstrap/Image';
+import Image from '../Image/Image';
 
 import classes from './ImageGroup.module.css';
 
 const imageGroup = ({ imageQuantity, imageURLs }) => {
-    const [state, setState] = useState({
-        numberOfImages: imageURLs.length,
-        images: imageURLs.map((url, index) => {
-            return <Image onClick={imageClickHandler} src={url} key={index} id={index} fluid rounded></Image>
-        }),
-        displayingFullImage: false,
-    })
-
     const imageClickHandler = event => {
         const idOfImg = event.target.id;
         const newState = setState(oldState => {
@@ -21,8 +13,18 @@ const imageGroup = ({ imageQuantity, imageURLs }) => {
                 })
             }
         })
-        console.log(idOfImg, newState)
+        console.log(idOfImg)
     }
+    const [state, setState] = useState({
+        numberOfImages: imageURLs.length,
+        images: imageURLs.map((url, index) => {
+            return <Image clickHandler={imageClickHandler} src={url} key={index} id={index} fluid rounded></Image>
+        }),
+        displayingFullImage: false,
+    })
+
+    console.log(state.images);
+    
 
     console.log(imageURLs);
     React.createContext();
