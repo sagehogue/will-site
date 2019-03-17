@@ -22,6 +22,7 @@ img {
 }
 
 .imageWrapper {
+
     position: relative;
     margin-bottom: 5rem;
     z-index: 5;
@@ -40,8 +41,8 @@ img {
 }
 
 .offsetY img {
-    max-width: 120%;
-    transform: translateX(-15%);
+    max-width: 118%;
+    transform: translateX(-15.5%);
 }
 
 .offsetY img:first-child {
@@ -62,7 +63,6 @@ img {
     width: 100%;
     top: 0;
     line-height: 3rem;
-    /* margin-bottom: .5rem; */
     position: absolute;
 }
 
@@ -71,7 +71,6 @@ img {
 }
 
 .stripe {
-    /* box-sizing: border-box; */
     position: absolute;
     padding: 15vh 50vw;
     transform: translateY(-2rem);
