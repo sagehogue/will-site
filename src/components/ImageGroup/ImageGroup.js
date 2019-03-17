@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import Image from 'react-bootstrap/Image';
 
 import classes from './ImageGroup.module.css';
 
-const imageGroup = props => {
-    let classArray = [classes.imageGroup, classes.imageGrid]
-    switch (props.imageQuantity) {
-        case 3:
-            classArray.push(classes.threeImages);
-            break;
-        case 4:
-            classArray.push(classes.fourImages);
-            break;
-        case 5:
-            classArray.push(classes.fiveImages);
-            break;
-        case 6:
-            classArray.push(classes.sixImages);
-            break;
-        case 'experiment':
-            classArray = [classes.experiment];
-            break;
-        default:
-            classArray.push(classes.twoImages)
+const imageGroup = ({ imageQuantity, imageURLs }) => {
+    const [state, setState] = useState({
+        numberOfImages: imageURLs.length,
+        images: imageURLs.map((url, index) => {
+            return <Image onClick={imageClickHandler} src={url} key={index} id={index} fluid rounded></Image>
+        }),
+        displayingFullImage: false,
+    })
+
+    const imageClickHandler = event => {
+        const idOfImg = event.target.id;
+        const newState = setState(oldState => {
+            return {
+                ...oldState, displayingFullImage: oldState.images.filter(el => {
+                    return el.props.id === idOfImg
+                })
+            }
+        })
+        console.log(idOfImg, newState)
     }
+
+    console.log(imageURLs);
+    React.createContext();
+    let classArray = [classes.imageGroup]
+
     return (
         <div className={classArray.join(' ')}>
-            {props.children}
+            {state.images}
         </div>
     )
 }

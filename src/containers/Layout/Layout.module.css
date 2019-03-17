@@ -1,34 +1,47 @@
+:root {
+    --text-border-color: rgba(255, 255, 255, 0.699);
+}
+
 body {
     background-color: #FFA5AB;
 }
 
 img {
-    z-index: 15;
-}
-
-.wrapper {
-    /* position: relative; */
+    z-index: 10;
 }
 
 .galleryPreface {
     margin-top: 6rem;
 }
 
+.galleryPreface h3 {
+    font-family: Merriweather;
+    font-weight: 600;
+    color: #3A3F4F;
+    text-align: center;
+}
+
 .imageWrapper {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     z-index: 5;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 'a b';
 }
 
 /* Definitely does more evil than just offsetting Y axis*/
 
 .offsetY {
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
 }
 
 .offsetY img {
-    max-width: 110%;
-    transform: translateX(-10%);
+    max-width: 120%;
+    transform: translateX(-15%);
 }
 
 .offsetY img:first-child {
@@ -38,42 +51,55 @@ img {
 }
 
 .caption {
-    z-index: 10;
+    text-shadow: -1px 0 var(--text-border-color), 0 1px var(--text-border-color), 1px 0 var(--text-border-color), 0 -1px var(--text-border-color);
+    max-height: 10rem;
+    max-width: 100%;
+    /* overflow: hidden; */
     word-wrap: wrap;
-    /* color: #E55073; */
     color: #F2C14E;
-    font-size: 2.8rem;
+    font-size: 2.9rem;
     font-weight: 800;
     width: 100%;
     top: 0;
-    line-height: 2rem;
+    line-height: 3rem;
     /* margin-bottom: .5rem; */
     position: absolute;
-    /* line-height: 0; */
 }
 
-.caption span{
+.caption span {
     z-index: 7000;
 }
 
 .stripe {
     /* box-sizing: border-box; */
     position: absolute;
-    padding: 15vh 75vw;
+    padding: 15vh 50vw;
     transform: translateY(-2rem);
     z-index: -10;
     background-color: #A53860;
     top: -5vh;
     left: 0;
-    clip-path: polygon(0 0, 80% 00%, 100% 100%, 0% 100%)
+    /* clip-path: polygon(0 0, 80% 00%, 100% 100%, 0% 100%) */
+}
+
+.bgBlue {
+    background-color: #1789a3;
 }
 
 .colorTeal {
-    color: teal;
+    color: #1fa8c7;
 }
 
 .colorDarkPink {
     color: #E55073;
+}
+
+.colorPowerliftPink {
+    color: #FFA5AB;
+}
+
+.colorPurple {
+    color: #713E5A;
 }
 
 .colorLightPink {
@@ -97,7 +123,11 @@ img {
 }
 
 .pullDownLess {
-    top: 99%;
+    top: 105%;
+}
+
+.pullDownMuchLess {
+    top: 85%;
 }
 
 .pullLeft {

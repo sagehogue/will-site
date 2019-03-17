@@ -1,21 +1,14 @@
-.experiment {
+.imageGroup {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    /* max-width: 30%; */
-    /* width: 100%; */
     flex-flow: row wrap;
     flex-shrink: 1;
     flex: 25%;
-    /* max-width: 90%; */
     max-height: 500px;
-    /* overflow: hidden; */
     padding: 0 4px;
     justify-content: center;
-    /* align-content: center; */
 }
 
-.experiment img {
+.imageGroup img {
     background-color: transparent;
     padding: 1px 3px;
      max-height: 25vh;
@@ -24,11 +17,6 @@
     flex: 1;
     flex-basis: 20vh;
     object-fit: cover;
-}
-
-.imageGrid {
-    display: grid;
-    width: 100%;
 }
 
 .imageGrid img {}

@@ -13,9 +13,13 @@ import willFlex from './images/will-flex.jpg';
 import cameraSelfie from './images/camera-selfie.JPG';
 import max from './images/max.jpg';
 import face from './images/face-in-wall.JPG';
-import lake from './images/e-city-lake-2.JPG';
+import lake from './images/e-city-lake.JPG'
+import lake2 from './images/e-city-lake-2.JPG';
+import people from './images/will-humans.JPG';
+import car from './images/car-eldorado.JPG'
 import carCloseUp from './images/car-up-front.JPG';
-// import people from './images/will-humans.JPG';
+import house from './images/e-city-house.JPG'
+import seattle from './images/seattle-1.JPG'
 
 import classes from './Layout.module.css';
 
@@ -27,11 +31,11 @@ const Layout = props => {
                 <h5>I'm an adventurous Portland native and triple threat.</h5>
             </Jumbotron>
             <div className={classes.wrapper}>
-                <div className={[classes.imageWrapper, classes.offsetY].join(' ')}>
-                    <ImageGroup image>
-                        <Image src={arkadiusz} fluid rounded />
-                        <Image src={sageSquat} fluid rounded />
-                    </ImageGroup>
+                <div className={[classes.imageWrapper, classes.offsetY, classes.grid].join(' ')}>
+                <Image src={arkadiusz} fluid rounded/>
+                <Image src={sageSquat} fluid rounded/>
+                    {/* <ImageGroup imageURLs={[arkadiusz, sageSquat]}>
+                    </ImageGroup> */}
                     <div className={[classes.caption, classes.pullDown].join(' ')}>
                         fitness photographer
                         <div className={classes.stripe} />
@@ -39,39 +43,37 @@ const Layout = props => {
                 </div>
                 <div className={classes.imageWrapper}>
                     <Image src={willSquat} fluid rounded />
-                    <div className={[classes.caption, classes.colorDarkPink, classes.alignCenter, classes.pullDownLess].join(' ')}>
+                    <div className={[classes.caption, classes.colorPowerliftPink, classes.alignCenter, classes.pullDownLess].join(' ')}>
                         powerlifter
+                        <div className={[classes.stripe, classes.bgBlue].join(' ')} />
                     </div>
 
                 </div>
                 <div className={classes.imageWrapper}>
                     <Image src={willFlex} fluid rounded />
-                    <div className={[classes.caption, classes.colorTeal, classes.pullDownLess].join(' ')}>
+                    <div className={[classes.caption, classes.colorTeal, classes.pullDownMuchLess].join(' ')}>
                         occasional model.
                     </div>
 
                 </div>
                 <div className={classes.galleryPreface}>
-                <h3>Sometimes I take pictures of the things I see..</h3>
-                <h3>So here's a little look into my mind.</h3>
+                    <h3>Sometimes I take pictures of the things I see..</h3>
                 </div>
-                {/* <ImageGroup imageQuantity={5}>
-                    <Image src={cameraSelfie} fluid rounded />
-                    <Image src={face} fluid rounded />
-                    <Image src={lake} fluid rounded />
-                    <Image src={carCloseUp} fluid rounded />
-                </ImageGroup> */}
-                <ImageGroup imageQuantity={"experiment"}>
-                    <Image src={cameraSelfie} fluid rounded />
-                    <Image src={face} fluid rounded />
-                    <Image src={lake} fluid rounded />
-                    <Image src={carCloseUp} fluid rounded />
-                    <Image src={max} fluid rounded />
-                    <Image src={arkadiusz} fluid rounded />
-                    <Image src={sageSquat} fluid rounded />
+                <ImageGroup 
+                imageQuantity={"experiment"}
+                imageURLs={[house, car, seattle, cameraSelfie, face, lake, carCloseUp, max, lake2, people]}>
+                    <Image src={house} fluid rounded />
+                <Image src={car} fluid rounded />
+                <Image src={seattle} fluid rounded />
+                <Image src={cameraSelfie} fluid rounded />
+                <Image src={face} fluid rounded />
+                <Image src={lake} fluid rounded />
+                <Image src={carCloseUp} fluid rounded />
+                <Image src={max} fluid rounded />
+                <Image src={lake2} fluid rounded />
+                <Image src={people} fluid rounded />
                 </ImageGroup>
-
-            </div>
+        </div>
         </>
     )
 }
