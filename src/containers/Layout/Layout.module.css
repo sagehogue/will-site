@@ -1,44 +1,71 @@
 body {
-    background-color: #FFF2F2;
+    background-color: #FFA5AB;
 }
 
-.alignRight {
-    text-align: right;
+img {
+    z-index: 15;
 }
 
 .wrapper {
-    position: relative;
+    /* position: relative; */
+}
+
+.galleryPreface {
+    margin-top: 6rem;
 }
 
 .imageWrapper {
     position: relative;
-    /* transform: translateY(-20%); */
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    z-index: 5;
 }
 
-.imageWrapper img:first-child {
-    grid-area: a;
-    transform: translateY(25%) !important;
+/* Definitely does more evil than just offsetting Y axis*/
+
+.offsetY {
+    margin-bottom: 15vh;
 }
 
-.imageWrapper img:nth-child(2) {
-    grid-area: b;
+.offsetY img {
+    max-width: 110%;
+    transform: translateX(-10%);
+}
+
+.offsetY img:first-child {
+    z-index: 15;
+    max-width: 120%;
+    transform: translateY(25%);
 }
 
 .caption {
-    /* font-family: "Lato"; */
+    z-index: 10;
     word-wrap: wrap;
     /* color: #E55073; */
     color: #F2C14E;
-    z-index: 7000;
-    font-size: 2.7rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 800;
     width: 100%;
     top: 0;
     line-height: 2rem;
-    margin-bottom: .5rem;
+    /* margin-bottom: .5rem; */
     position: absolute;
     /* line-height: 0; */
+}
+
+.caption span{
+    z-index: 7000;
+}
+
+.stripe {
+    /* box-sizing: border-box; */
+    position: absolute;
+    padding: 15vh 75vw;
+    transform: translateY(-2rem);
+    z-index: -10;
+    background-color: #A53860;
+    top: -5vh;
+    left: 0;
+    clip-path: polygon(0 0, 80% 00%, 100% 100%, 0% 100%)
 }
 
 .colorTeal {
@@ -61,20 +88,22 @@ body {
     transform: translateY(-25%);
 }
 
-.pullLeft {
-    left: -5%;
-}
 .pullUp100 {
     transform: translateY(-100%);
-    /* text-align: center; */
-
 }
 
 .pullDown {
     top: 125%;
-    /* transform: translateY(170%); */
 }
 
 .pullDownLess {
-    top: 101%;
+    top: 99%;
+}
+
+.pullLeft {
+    left: -5%;
+}
+
+.alignRight {
+    text-align: right;
 }

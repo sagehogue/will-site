@@ -17,6 +17,9 @@ const imageGroup = props => {
         case 6:
             classArray.push(classes.sixImages);
             break;
+        case 'experiment':
+            classArray = [classes.experiment];
+            break;
         default:
             classArray.push(classes.twoImages)
     }

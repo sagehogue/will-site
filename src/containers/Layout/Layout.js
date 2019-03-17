@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Image from 'react-bootstrap/Image'
@@ -27,13 +27,14 @@ const Layout = props => {
                 <h5>I'm an adventurous Portland native and triple threat.</h5>
             </Jumbotron>
             <div className={classes.wrapper}>
-                <div className={classes.imageWrapper}>
-                    <ImageGroup>
+                <div className={[classes.imageWrapper, classes.offsetY].join(' ')}>
+                    <ImageGroup image>
                         <Image src={arkadiusz} fluid rounded />
                         <Image src={sageSquat} fluid rounded />
                     </ImageGroup>
-                    <div className={[classes.caption, classes.pullDown, classes.pullLeft, classes.alignRight].join(' ')}>
+                    <div className={[classes.caption, classes.pullDown].join(' ')}>
                         fitness photographer
+                        <div className={classes.stripe} />
                     </div>
                 </div>
                 <div className={classes.imageWrapper}>
@@ -50,16 +51,26 @@ const Layout = props => {
                     </div>
 
                 </div>
-
+                <div className={classes.galleryPreface}>
                 <h3>Sometimes I take pictures of the things I see..</h3>
                 <h3>So here's a little look into my mind.</h3>
-                <ImageGroup imageQuantity={5}>
+                </div>
+                {/* <ImageGroup imageQuantity={5}>
                     <Image src={cameraSelfie} fluid rounded />
                     <Image src={face} fluid rounded />
                     <Image src={lake} fluid rounded />
                     <Image src={carCloseUp} fluid rounded />
-                </ImageGroup>
+                </ImageGroup> */}
+                <ImageGroup imageQuantity={"experiment"}>
+                    <Image src={cameraSelfie} fluid rounded />
+                    <Image src={face} fluid rounded />
+                    <Image src={lake} fluid rounded />
+                    <Image src={carCloseUp} fluid rounded />
                     <Image src={max} fluid rounded />
+                    <Image src={arkadiusz} fluid rounded />
+                    <Image src={sageSquat} fluid rounded />
+                </ImageGroup>
+
             </div>
         </>
     )

@@ -1,43 +1,70 @@
+.experiment {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* max-width: 30%; */
+    /* width: 100%; */
+    flex-flow: row wrap;
+    flex-shrink: 1;
+    flex: 25%;
+    /* max-width: 90%; */
+    max-height: 500px;
+    /* overflow: hidden; */
+    padding: 0 4px;
+    justify-content: center;
+    /* align-content: center; */
+}
+
+.experiment img {
+    background-color: transparent;
+    padding: 1px 3px;
+     max-height: 25vh;
+    /* max-width: 12vw;  */
+    /* width: auto; */
+    flex: 1;
+    flex-basis: 20vh;
+    object-fit: cover;
+}
+
 .imageGrid {
     display: grid;
     width: 100%;
 }
 
-.imageGrid img {
-}
+.imageGrid img {}
 
 .twoImages {
     grid-template-areas: 'a b';
 }
 
 .threeImages {
-    grid-template-areas: "a a b b" 
-                         ". c c .";
+    grid-template-areas: "a a b b" ". c c .";
 }
 
 .fourImages {
-    grid-template-areas: "a a b b" 
-                         "c c d d";
+    grid-template-areas: "a a b b" "c c d d";
 }
 
 .fiveImages {
-    grid-template-areas: "a a b b" 
-                         "c c d d"
-                         "e e e e"
+    grid-template-areas: "a a b b" "c c d d" "e e e e"
 }
 
 .fiveImages :first-child {
     grid-area: a;
 }
+
 .fiveImages :nth-child(2) {
     grid-area: b;
 }
+
 .fiveImages :nth-child(3) {
     grid-area: c;
 }
+
 .fiveImages :nth-child(4) {
     grid-area: d;
 }
+
 .fiveImages :nth-child(5) {
     grid-area: e;
 }
