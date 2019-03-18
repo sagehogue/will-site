@@ -1,45 +1,58 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Image from '../Image/Image';
 
 import classes from './ImageGroup.module.css';
 
 import backdropContext from '../Backdrop/BackdropContext';
 
-// Consider how and where to implement logic to hold throw in a backdrop. It needs to sit on the top layer, so I could just use some context to access that. Create a context in the layout page and access it here to keep state out there consistent!
+// MOST RECENT: Need to get the full <Image /> in the fullsizeimage property in state.
 
-const imageGroup = ({imageURLs}) => {
-    const {backdropClosed, toggle} = useContext(backdropContext);
-    // toggle(true);
-    console.log(backdropClosed)
+// I need to document this well, it's getting a bit clusterfucky. Next on the list is building gallery functionality that will allow someone to click arrows to go through the images.
+
+// I'll also need a componentDidUpdate sort of thing that will determine if there's a full size image and if there is, to add a way to thumb around through the array.
+
+const imageGroup = ({ imageURLs }) => {
+    // backdropClosed is state information, toggle is the function to change state.
+    const { backdropClosed, toggle } = useContext(backdropContext);
+    // Positioned first so the method is defined when state is initialized.
     const imageClickHandler = event => {
-        toggle({backdropClosed: false});
-        // const backdropContext = React.createContext();
+        toggle({ backdropClosed: false });
         const idOfImg = event.target.id;
         const newState = setState(oldState => {
             return ({
-                ...oldState, displayingFullImage: oldState.images.filter(el => {
-                    return el.props.id === idOfImg
-                })
+                ...oldState, displayingFullImage: event.target.id
             })
         })
-
     }
     const [state, setState] = useState({
-        numberOfImages: imageURLs.length,
-        images: imageURLs.map((url, index) => {
-            return <Image clickHandler={imageClickHandler} src={url} key={index} id={index} fluid rounded></Image>
-        }),
         displayingFullImage: false,
+        numberOfImages: imageURLs.length,
     })
-    React.createContext();
-    let classArray = [classes.imageGroup]
 
+
+    const determineHowImagesRender = (imageURLs) => {
+        
+        return imageURLs.map((url, index) => {
+            return <Image
+                clickHandler={imageClickHandler}
+                src={url}
+                key={index}
+                id={index}
+                fullsize={state.displayingFullImage !== false && url !== state.displayingFullImage.props.src ? true : false}
+                fluid rounded></Image>
+        })
+    }
+
+    let classArray = [classes.imageGroup]
     return (
-        // <backdropContext.Consumer>
-            <div className={classArray.join(' ')}>
-                {state.images}
-            </div>
-        // </backdropContext.Consumer>
+        <div className={classArray.join(' ')}>
+            {determineHowImagesRender(imageURLs)}
+
+            {/* {state.images.filter(image => {
+                // 
+                return image !== state.displayingFullImage? true : false;
+            })} */}
+        </div>
     )
 }
 
