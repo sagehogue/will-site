@@ -175,28 +175,34 @@ img {
     .imageWrapper {
         pointer-events: none;
     }
+
     .imageWrapper .stripe {
         transform: scale(1.2);
     }
+
     .marginBottomLarge {
         margin-bottom: 20vh;
     }
+
     .imageWrapper.imgWrapperLandscape {
         max-width: 85%;
         margin: 5rem auto;
         transform: translateY(5%);
     }
+
     .stripe {
         padding: 20vh 50vw;
         transform: translateY(-2rem) scale(1.2);
         clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
     }
+
     /* .pullDown {
         top: 105%;
     } */
     .pullDownLess {
         top: 100%;
     }
+
     .pullDownOther {
         top: 90%;
     }
@@ -217,18 +223,36 @@ img {
     span {
         font-size: 3.5rem;
     }
+
     .stripe {
         padding: 35vh 50vw;
     }
+
     .galleryPreface {
         margin-top: 8rem;
     }
-    
+
     .galleryPreface h3 {
         font-family: Merriweather;
         font-weight: 700;
         font-size: 2.5rem;
         color: #581F18;
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .imageWrapper:first-of-type {
+        transform: translateY(-10%);
+    }
+
+    .imageWrapper:nth-of-type(3) img {
+        display: block;
+        margin: auto;
+        /* justify-self: center; */
+    }
+    .imageWrapper:nth-of-type(3) .caption { 
+        text-align: right;
+        transform: translateX(-20%);
     }
 }
