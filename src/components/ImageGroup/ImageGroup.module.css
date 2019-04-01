@@ -3,7 +3,9 @@
     flex-flow: row wrap;
     flex-shrink: 1;
     flex: 25%;
-    max-height: 500px;
+    /* max-height: 500px;
+     */
+     max-height: 100%;
     padding: 0 4px;
     justify-content: center;
 }

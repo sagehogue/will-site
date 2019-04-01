@@ -1,31 +1,36 @@
 :root {
     --text-border-color: rgba(255, 255, 255, 0.699);
+    --text-border-color-2: #1fa8c74d;
 }
 
 body {
-    background-color: #FFA5AB;
+    background: linear-gradient(rgba(255, 165, 171, 0.781), rgba(219, 146, 146, 0.911));
+    /* background: linear-gradient(rgba(255, 165, 171, 0.781), #3A3F4F) */
 }
 
 img {
     z-index: 10;
 }
 
-.galleryPreface {
-    margin-top: 6rem;
-}
-
-.galleryPreface h3 {
-    font-family: Merriweather;
-    font-weight: 600;
-    color: #3A3F4F;
-    text-align: center;
+.wrapper {
+    overflow: hidden;
+    padding-bottom: 1rem;
 }
 
 .imageWrapper {
-
     position: relative;
     margin-bottom: 5rem;
+    margin-top: 3rem;
     z-index: 5;
+    width: 100vw;
+}
+
+.center img {
+    margin: auto 0;
+}
+
+.caption span {
+    z-index: 500;
 }
 
 .grid {
@@ -36,26 +41,25 @@ img {
 
 /* Definitely does more evil than just offsetting Y axis*/
 
-.offsetY {
+.marginBottomLarge {
     margin-bottom: 20vh;
 }
 
 .offsetY img {
-    max-width: 118%;
-    transform: translateX(-15.5%);
+    /* max-width: 118%; */
+    transform: translateX(-9%) scale(1.18);
 }
 
 .offsetY img:first-child {
     z-index: 15;
-    max-width: 120%;
-    transform: translateY(25%);
+    /* max-width: 120%; */
+    transform: translateY(25%) scale(1.2);
 }
 
 .caption {
     text-shadow: -1px 0 var(--text-border-color), 0 1px var(--text-border-color), 1px 0 var(--text-border-color), 0 -1px var(--text-border-color);
     max-height: 10rem;
     max-width: 100%;
-    /* overflow: hidden; */
     word-wrap: wrap;
     color: #F2C14E;
     font-size: 2.9rem;
@@ -70,6 +74,8 @@ img {
     z-index: 7000;
 }
 
+/* Colored stripes behind the caption */
+
 .stripe {
     position: absolute;
     padding: 15vh 50vw;
@@ -81,8 +87,32 @@ img {
     /* clip-path: polygon(0 0, 80% 00%, 100% 100%, 0% 100%) */
 }
 
+/* Text section above the gallery */
+
+.galleryPreface {
+    margin-top: 6rem;
+}
+
+.galleryPreface h3 {
+    font-family: Merriweather;
+    font-weight: 600;
+    color: #A53860;
+    text-shadow: -1px 0 var(--text-border-color-2), 0 1px var(--text-border-color-2), 1px 0 var(--text-border-color-2), 0 -1px var(--text-border-color-2);
+    text-align: center;
+}
+
+.galleryWrapper {
+    background-color: #1fa8c74d;
+}
+
+/* Colors */
+
 .bgBlue {
     background-color: #1789a3;
+}
+
+.secondBgCol {
+    background-color: #BAB0B0;
 }
 
 .colorTeal {
@@ -105,6 +135,8 @@ img {
     color: #FC586B;
 }
 
+/* Utilities */
+
 .alignCenter {
     text-align: center;
 }
@@ -118,14 +150,14 @@ img {
 }
 
 .pullDown {
-    top: 125%;
+    top: 135%;
 }
 
 .pullDownLess {
     top: 105%;
 }
 
-.pullDownMuchLess {
+.pullDownOther {
     top: 85%;
 }
 
@@ -135,4 +167,68 @@ img {
 
 .alignRight {
     text-align: right;
+}
+
+/* Landscape Styling */
+
+@media screen and (orientation: landscape) {
+    .imageWrapper {
+        pointer-events: none;
+    }
+    .imageWrapper .stripe {
+        transform: scale(1.2);
+    }
+    .marginBottomLarge {
+        margin-bottom: 20vh;
+    }
+    .imageWrapper.imgWrapperLandscape {
+        max-width: 85%;
+        margin: 5rem auto;
+        transform: translateY(5%);
+    }
+    .stripe {
+        padding: 20vh 50vw;
+        transform: translateY(-2rem) scale(1.2);
+        clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    }
+    /* .pullDown {
+        top: 105%;
+    } */
+    .pullDownLess {
+        top: 100%;
+    }
+    .pullDownOther {
+        top: 90%;
+    }
+}
+
+/* @media screen and (orientation: landscape) and (max-width: 960px) {
+    .offsetY img {
+        transform: translateY(-5%) translateX(-2%) scale(1.04);
+    }
+    .offsetY img:first-child {
+        transform: translateY(-5%) scale(1.02);
+    }
+} */
+
+
+
+@media screen and (min-width: 1150px) {
+    span {
+        font-size: 3.5rem;
+    }
+    .stripe {
+        padding: 35vh 50vw;
+    }
+    .galleryPreface {
+        margin-top: 8rem;
+    }
+    
+    .galleryPreface h3 {
+        font-family: Merriweather;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #581F18;
+        text-align: center;
+    }
 }

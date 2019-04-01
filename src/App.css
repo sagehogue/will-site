@@ -9,8 +9,19 @@
 
 .jumbotron h1 {
   font-weight: 1000;
+
 }
 
 .jumbotron h5 {
   font-weight: 700;
+}
+
+@media screen and (min-width: 1100px) {
+  .jumbotron h1 {
+      font-size: 3.5rem;
+  }
+
+  .jumbotron h5 {
+    font-size: 2rem;
+  }
 }
